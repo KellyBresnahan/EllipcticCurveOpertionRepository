@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter a prime number, p that is greater than 3: ");
+        int p = reader.nextInt(); // Scans the next token of the input as an int.
+        
+        System.out.println("Enter a natural number, a, less than p: ");
+        int a = reader.nextInt();
+
+        System.out.println("Enter a natural number, b, less than p: ");
+        int b = reader.nextInt();
+
+        System.out.println("Enter two points, P1 = x1 y1 and P2 = x2 y2, on E: y^2 = x^3 + ax + b (mod p) that you wish to add together."); 
+        System.out.println("Note that each coordinate must be a natural number less than p. The point (infinity, infinity) may also be used.");
+        double x1 = reader.nextDouble();
+        double y1 = reader.nextDouble();
+        double x2 = reader.nextDouble();
+        double y2 = reader.nextDouble();
+        double sumX;
+        double sumY;
+        
+        // The code below will test the P1 and P2 are points on our elliptic curve. If not, it will return an error. 
+        double ECurveAtX1 = (x1*x1*x1 + a*x1 + b) % p;
+        
+        
+        
+        // The code below will actually perform the operation. 
+        if((x1 != x2) || (y1 != y2)){
+          if(x1 == x2){
+            sumX = Double.POSITIVE_INFINITY; 
+            sumY = Double.POSITIVE_INFINITY;
+          }
+          if else((x1 == Double.POSITIVE_INFINITY) && (y1 == Double.POSITIVE_INFINITY)){
+            SumX = x2;
+            SumY = y2;
+          }
+          if else((x2 == Double.POSITIVE_INFINITY) && (y2 == Double.POSITIVE_INFINITY)){
+            SumX = x1;
+            SumY = y1;
+          }
+        }
+        
+
+        System.out.println("(" + x1 + ", " + y1 + ") + (" + x2 + ", " + y2 + ") = (" + Sum + X", " + SumY + ")");   
+        //This will print out the sum of the two given points. 
+    }
+}    
