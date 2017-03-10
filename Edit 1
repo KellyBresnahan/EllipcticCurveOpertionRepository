@@ -46,9 +46,21 @@ public class Solution {
             SumY = y1;
           }
         }
+        else{
+            if(y1 == 0){
+                SumX = Double.POSITIVE_INFINITY;
+                SumY = Double.POSITIVE_INFINITY;
+            }
+            else{
+                int 2y1Inverse = 2y1.modInverse(p);
+                int m = ((3*x1 + b)*(2y1Inverse))%p;
+                SumX = (m*m - x1 - x2)%p;
+                SumY = m*(x1 - SumX) - y1;
+            }
+        }
         
 
-        System.out.println("(" + x1 + ", " + y1 + ") + (" + x2 + ", " + y2 + ") = (" + Sum + X", " + SumY + ")");   
+        System.out.println("The sum of P1 and P2 is (" + SumX +", " SumY + ").");   
         //This will print out the sum of the two given points. 
     }
 }    
